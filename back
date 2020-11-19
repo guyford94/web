@@ -1,0 +1,41 @@
+function doGet(e) {
+  try{
+ var outpot = HtmlService.createTemplateFromFile('index');
+ var Html = outpot.evaluate().setSandboxMode(HtmlService.SandboxMode.IFRAME);
+ return Html;
+  }
+  catch(e){
+    return ContentService.createTextOutput(JSON.stringify({'error' : e})).setMimeType(ContentService.MimeType.JSON);
+  }
+  
+  
+}
+function getRandom(){
+  return (new Date().getTime()).toString(36);
+
+}
+
+
+function addData(Data){
+   var ss = SpreadsheetApp.openById("1lwN_6ngj0K-v0keleeHVuESrqu4nK13qfu25xZaJiyw");
+  var sheet = ss.getSheetByName("INC_A").activate();
+  var user = Session.getActiveUser().getEmail();
+  var ID = getRandom();
+  var createdDate = Date();
+  
+  var holder = [user,Data.Short_description,Data.description,user,ID,createdDate];
+ 
+  sheet.appendRow(holder);
+    MailApp.sendEmail("pwcnetwork@service-now.com",holder[1],holder[2]);
+ 
+  return {
+    'trackingid':ID,
+    'added':holder}
+
+}
+
+
+/*
+pwcnetwork@service-now.com
+  
+  */
