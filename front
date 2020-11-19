@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+  <h1> Opening an incident </h1>
+  <div class = "container">
+  <form id = "INC">
+  
+  Short description:<input type="text" name="shortdescription" required ><br>
+  Description:<input type="text" name="description" required><br>
+ 
+  <input id="SubmitButton" type="submit" name="submit" onclick="DoOnSubmit()" value="submit">
+  </form>
+  </div>
+  <script>
+  const myForm = document.querySelector('#INC');
+   const container = document.querySelector('.container');
+ console.log(myForm);
+  myForm.addEventListener('submit',function(e){
+  e.preventDefault();
+   let myData = {
+  
+  'Short_description' : this.querySelector('input[name="shortdescription"]').value,
+  'description' : this.querySelector('input[name="description"]').value,
+  }
+   google.script.run.withSuccessHandler(onSuccess).addData(myData);
+   
+   console.dir(myData);
+ })
+  
+   
+
+  function onSuccess(Data){
+  if (Data.status){ 
+  container.innerHTML = '<h1>ID ' + Data.trackingid + '</h1>'; }
+  //console.log(Data);
+  //return Data;
+  }
+
+function DoOnSubmit(){
+var SumbitButtonElement=document.getElementById("SubmitButton");
+SumbitButtonElement.style.display = "none";
+}
+  </script>
+	
+  </body>
+</html>
+
+
