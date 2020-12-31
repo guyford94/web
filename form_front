@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+    <style>
+  /*
+  עיצוב של הטופס ע"י CSS
+  */
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<!--כותרת-->
+  <h1> Software installation request </h1>
+  <div class = "container">
+  <form id = "Software_installation_request">
+  <!--הגדרת השאלות-->
+ First name:<input type="text" name="Firstname" required ><br>
+  Last Name:<input type="text" name="LastName" required><br>
+  The software you do not want to install:<input type="text" name="software" required><br>
+ <label for="PartnerEmail">Choose Partner Email:</label><br>
+ <select id="PartnerEmail" name="PartnerEmail">
+  <!--הגדרת השותפים-->
+ <option value=NULL>בחר את השוטף הרלוונטי</option>
+<option value="Amir.Gleit@pwc.com">Amir Gleit</option>
+<option value="arik.reizner@pwc.com">arik reizner</option>
+<option value="avi.noiman@pwc.com">avi noiman</option>
+<option value="avishay.bardugo@pwc.com">avishay bardugo</option>
+<option value="ayelet.gavish@pwc.com">ayelet gavish</option>
+<option value="ayelet.gavish@pwc.com">ayelet gavish</option>
+<option value="batia.ron@pwc.com">batia ron</option>
+<option value="ben.blumenfeld@pwc.com">ben blumenfeld</option>
+<option value="ben.lazarus@pwc.com">ben lazarus</option>
+<option value="bilha.grand@pwc.com">bilha grand</option>
+<option value="chen.liblich@pwc.com">chen liblich</option>
+<option value="claudio.yarza@pwc.com">claudio yarza</option>
+<option value="dangelo.adam@pwc.com">dangelo adam</option>
+<option value="Doron.Sadan@pwc.com">Doron Sadan</option>
+<option value="eitan.akiva@pwc.com">eitan akiva</option>
+<option value="eitan.glazer@pwc.com">eitan glazer</option>
+<option value="eli.argaman@pwc.com">eli argaman</option>
+<option value="eran.raz@pwc.com">eran raz</option>
+<option value="eric.benishay@pwc.com">eric benishay</option>
+<option value="gil.barak@pwc.com">gil barak</option>
+<option value="gil.mor@pwc.com">gil mor</option>
+<option value="guy.preminger@pwc.com">guy preminger</option>
+<option value="guy.sapir@pwc.com">guy sapir</option>
+<option value="haim.frenkel@pwc.com">haim frenkel</option>
+<option value="ido.heller@pwc.com">ido heller</option>
+<option value="iran.newman@pwc.com">iran newman</option>
+<option value="itamar.gelfer@pwc.com">itamar gelfer</option>
+<option value="liat.enzel-aviel@pwc.com">liat enzel aviel</option>
+<option value="liat.enzel-aviel@pwc.com">liat enzel aviel</option>
+<option value="lior.mistriel@pwc.com">lior mistriel</option>
+<option value="lioran.pinchevski@pwc.com">lioran pinchevski</option>
+<option value="malka.eichenstein@pwc.com">malka eichenstein</option>
+<option value="marc.rosenbaum@pwc.com">marc rosenbaum</option>
+<option value="maya.ben.shmuel@pwc.com">maya ben shmuel</option>
+<option value="meir.mishali@pwc.com">meir mishali</option>
+<option value="michael.levy@pwc.com">michael levy</option>
+<option value="michal.fridman@pwc.com">michal fridman</option>
+<option value="moshe.peress@pwc.com">moshe peress</option>
+<option value="murad.abu.hamdi@pwc.com">murad abu hamdi</option>
+<option value="murad.abu.hamdi@pwc.com">murad abu hamdi</option>
+<option value="naama.drukman@pwc.com">naama drukman</option>
+<option value="neta.zruya@pwc.com">neta zruya</option>
+<option value="neta.zruya@pwc.com">neta zruya</option>
+<option value="nir.kofman@pwc.com">nir kofman</option>
+<option value="nir.zepkowitz@pwc.com">nir zepkowitz</option>
+<option value="noam.hadar@pwc.com">noam hadar</option>
+<option value="oded.pinhas@pwc.com">oded pinhas</option>
+<option value="omer.gavish@pwc.com">omer gavish</option>
+<option value="oren.maimon@pwc.com">oren maimon</option>
+<option value="oskar.abo-razak@pwc.com">oskar abo razak</option>
+<option value="rafael.maman@pwc.com">rafael maman</option>
+<option value="roee.hamo@pwc.com">roee hamo</option>
+<option value="ronen.berkovich@pwc.com">ronen berkovich</option>
+<option value="rubi.suliman@pwc.com">rubi suliman</option>
+<option value="sarit.hamzany@pwc.com">sarit hamzany</option>
+<option value="shahar.houri@pwc.com">shahar houri</option>
+<option value="shalom.sofer@pwc.com">shalom sofer</option>
+<option value="shaul.ben-amotz@pwc.com">shaul ben amotz</option>
+<option value="shlomi.benmocha@pwc.com">shlomi benmocha</option>
+<option value="tal.naor@pwc.com">tal naor</option>
+<option value="talya.gazit@pwc.com">talya gazit</option>
+<option value="tamir.hay@pwc.com">tamir hay</option>
+<option value="tzachi.schwartz@pwc.com">tzachi schwartz</option>
+<option value="tzur.fenigstein@pwc.com">tzur fenigstein</option>
+<option value="vered.kirshner@pwc.com">vered kirshner</option>
+<option value="yael.gerassi@pwc.com">yael gerassi</option>
+<option value="yair.zorea@pwc.com">yair zorea</option>
+<option value="yaron.hedvat@pwc.com">yaron hedvat</option>
+<option value="yaron.levy@pwc.com">yaron levy</option>
+<option value="yaron.weizenbluth@pwc.com">yaron weizenbluth</option>
+<option value="yitschak.palombo@pwc.com">yitschak palombo</option>
+<option value="yocheved.perlmutter@pwc.com">yocheved perlmutter</option>
+<option value="zvi.yehezkel@pwc.com">zvi yehezkel</option>
+
+  <!--הגדרת כפתור הגשה-->
+  <input id="SubmitButton" type="submit" name="submit" onclick="DoOnSubmit()" value="submit">
+  </form>
+  </div>
+
+  <script>
+  const myForm = document.querySelector('#Software_installation_request');
+   const container = document.querySelector('.container');
+ console.log(myForm);
+  myForm.addEventListener('submit',function(e){
+  e.preventDefault();
+   let myData = {
+  
+  'Firstname' : this.querySelector('input[name="Firstname"]').value,
+  'LastName' : this.querySelector('input[name="LastName"]').value,
+  'software' : this.querySelector('input[name="software"]').value,
+  'PartnerEmail' : this.querySelector('select[name="PartnerEmail"]').value,
+
+  }
+   google.script.run.withSuccessHandler(onSuccess).addData(myData);
+   
+   console.dir(myData);
+ })
+  
+   
+
+  function onSuccess(Data){
+  if (Data.status){ 
+  container.innerHTML = '<h1>ID ' + Data.trackingid + '</h1>'; }
+ console.log(Data);
+  return Data;
+  }
+/*הגדרת מה קורה עם הכפתור הגשה אחרי לחיצה*/
+function DoOnSubmit(){
+var SumbitButtonElement=document.getElementById("SubmitButton");
+SumbitButtonElement.style.display = "none";
+}
+  </script>
+	
+  </body>
+</html>
+
+
