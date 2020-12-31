@@ -1,0 +1,48 @@
+  function doGet(e) {
+  try{
+    //הפניה לקובץ HTML שיוצר את הטופס
+ var outpot = HtmlService.createTemplateFromFile('index');
+ var Html = outpot.evaluate().setSandboxMode(HtmlService.SandboxMode.IFRAME);
+ return Html;
+  }
+  catch(e){
+    return ContentService.createTextOutput(JSON.stringify({'error' : e})).setMimeType(ContentService.MimeType.JSON);
+  }
+  
+  
+}
+
+//יוצר מזהה יחודי לטופס
+function getRandom(){
+  return (new Date().getTime()).toString(36);
+
+}
+
+function addData(Data){
+   var ss = SpreadsheetApp.openById("10D6gFzo0dvyOEUHvmF8tfCmIsrKyVTGpR922Rd0uZqU");//פניה לגוגל שייט של התשובות
+  var sheet = ss.getSheetByName("Sheet1").activate();
+  //לוקח את המייל של היוזר והנתונים
+  var user = Session.getActiveUser().getEmail();
+  var ID = getRandom();
+  var createdDate = Date();
+  var holder = [user,Data.Firstname,Data.LastName,Data.software,Data.PartnerEmail,user,ID,createdDate];
+ //ממלא את הטופס בפרטים
+  sheet.appendRow(holder);
+  //שולח מיי ל|נושא|תוכן
+  var messege = "The employee : " + holder[1]+ " " + holder[2]+ " Request to install the software: " + holder[3] + " For confirmation, please reply to this email with your confirmation" 
+    Logger.log(messege);
+   
+  MailApp.sendEmail(holder[4], "pwcnetwork@service-now.com", "טופס בקשה להתקנת " +holder[3],messege );
+
+  return {
+    'trackingid':ID,
+    'added':holder}
+ 
+
+}
+
+
+/*
+pwcnetwork@service-now.com
+  
+  */
